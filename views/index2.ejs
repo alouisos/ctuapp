@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!-- Hey my name is Alex and I am the co-founder and CEO of Genetium.  I love people taking a curious look into things. If you are like me and like making things possible you should join our team and help us fulfill our mission of using technology to save lives. Contact me at alouisos@genetium.com  Ps: if you keep searching the code you may be able to find more easter eggs...well, instead of keep searching it why don't you come with us to change the world?-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cambridge Clinical Trials Unit</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/wf.css">
+    <link rel="stylesheet" type="text/css" href="css/genetium.css">
+<link type="text/css" rel="stylesheet" href="css/rickshaw.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
+<script src="js/d3.layout.js"></script>
+<script src="js/rickshaw.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/responsiveslides.css">
+
+        <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen, print"/>
+ <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+
+  
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar/navbar.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ["Montserrat:400,700","Bitter:400,700"]
+        }
+      });
+    </script>
+    <link rel="icon" type="image/x-icon" href="http://www.genetium.com/favicon2.ico">
+    <link rel="apple-touch-icon" href="https://y7v4p6k4.ssl.hwcdn.net/51d1bb05fc804b2621000001/51e06f0756878bb26a000008_webclip-slate.png">
+    <script type="text/javascript" src="js/wf.js" defer></script>
+  </head>
+
+  <body>
+
+  <header>
+<div class="row"> 
+        <div class="col-lg-1 col-xs-12">
+
+ <center><a href="/cctu-clinical-trials"><img src="images/logoctu.jpg" alt="CCTU logo" width="100"></a></center>
+</div>         <div class="col-lg-9 col-xs-12">
+<p class="app-name"> Cambridge Clinical Trials Unit</p>
+</div> 
+                  <div class="col-lg-2 col-xs-12">
+
+          <center><img src="images/nhs.jpg" alt="NHS logo" width="290" height="50">
+        </center></div>
+       
+
+        </div> 
+  </header>
+
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
+
+  <!-- Static navbar -->
+      <div class="navbar navbar-default" style="margin-bottom:0px; background-color:#fff" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Home</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/services">Trial Support</a></li>
+              <li><a href="/contact">Contact</a></li>
+             
+              <li class="dropdown">
+                <a href="./Navbar Template for Bootstrap_files/Navbar Template for Bootstrap.html" class="dropdown-toggle" data-toggle="dropdown">Clinical Trials <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/cctu-clinical-trials/#cardiovascular">Cardiovascular</a></li>
+                  <li><a href="/cctu-clinical-trials/#cancer">Cancer</a></li>
+                  <li><a href="/cctu-clinical-trials/#Paediatrics">Paediatrics</a></li>
+                  <li><a href="/cctu-clinical-trials/#surgery">Surgery</a></li>
+                  <li><a href="./cctu-clinical-trials/#other">Other</a></li>
+                </ul>
+              </li>
+            </ul>
+           
+          </div><!--/.nav-collapse -->
+
+        </div><!--/.container-fluid -->
+      </div> 
+<div class="row"> 
+        <div class="col-lg-4 col-xs-12 section">
+          <p class="hero-subtitle"> We promote excellence in clinical trials by working with researchers to conduct the highest quality clinical research addressing important questions related to human health and disease. <br> <br> Cambridge Clinical Trials Unit is fully registered with the UKCRC CTU network.</p><center><img class="hero-iphone" src="images/dna2.gif" width="250px" height="250px" alt="Dna Image"></div> 
+        
+
+        <div class="col-lg-8 col-xs-12 section">
+<p class="app-name">  CCTU in Numbers</p>
+<style>
+#chart_container {
+       
+        font-family: Arial, Helvetica, sans-serif;
+        padding-top: 20px;
+        padding-left:120px;
+}
+#chart {
+        float: left;
+}
+#legend {
+        margin-left: 150px;
+        margin-top: 20px;
+}
+#offset_form {
+        float: left;
+        margin: 2em 0 0 15px;
+        font-size: 13px;
+}
+#y_axis {
+        float: left;
+        width: 40px;
+        height: 320px;
+}
+</style>
+
+<div id="chart_container">
+        <div id="y_axis"></div>
+        <div id="chart"></div>
+        <div id="legend"></div>
+       </div> 
+
+<script>
+var palette = new Rickshaw.Color.Palette();
+
+var graph = new Rickshaw.Graph( {
+        element: document.querySelector("#chart"),
+        width: 500,
+        height: 200,
+        renderer: 'line',
+        series: [
+                {
+                        name: "Proposed Trials",
+                        data: [ { x: 1375315200, y: 2 }, { x: 1377993600, y: 29 }, { x: 1380585600, y: 34 }, { x: 1383264000, y: 35 }, { x: 1385856000, y: 39 }, { x: 1388534400, y: 44 }, { x: 1391212800, y: 49 }, { x: 1393632000, y: 49 }, { x: 1396310400, y: 52 }, { x: 1398902400, y: 55 }, { x: 1401580800, y: 57 } ],
+                        color: palette.color()
+                },
+                {
+                        name: "Open Trials",
+                         data: [ { x: 1375315200, y: 2 }, { x: 1377993600, y: 9 }, { x: 1380585600, y: 15 }, { x: 1383264000, y: 18 }, { x: 1385856000, y: 18 }, { x: 1388534400, y: 18 }, { x: 1391212800, y: 19 }, { x: 1393632000, y: 23 }, { x: 1396310400, y: 25 }, { x: 1398902400, y: 27 }, { x: 1401580800, y: 30 } ],
+                        color: palette.color()
+                },
+                {
+                        name: "Completed Trials",
+                        data: [ { x: 1375315200, y: 2 }, { x: 1377993600, y: 18 }, { x: 1380585600, y: 20 }, { x: 1383264000, y: 22 }, { x: 1385856000, y: 25 }, { x: 1388534400, y: 27}, { x: 1391212800, y: 27 }, { x: 1393632000, y: 30}, { x: 1396310400, y: 32 }, { x: 1398902400, y: 35 }, { x: 1401580800, y: 40 } ],
+                        color: palette.color()
+                },
+               
+        ]
+} );
+
+var x_axis = new Rickshaw.Graph.Axis.Time( { graph: graph } );
+
+var y_axis = new Rickshaw.Graph.Axis.Y( {
+        graph: graph,
+        orientation: 'left',
+        tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+        element: document.getElementById('y_axis'),
+} );
+
+var legend = new Rickshaw.Graph.Legend( {
+        element: document.querySelector('#legend'),
+        graph: graph
+} );
+
+var offsetForm = document.getElementById('offset_form');
+
+
+
+graph.render();
+
+</script>
+
+
+<table class="table table-bordered">
+  <tr> 
+   <td><center><strong> Month</strong>  </center> </td>
+    <td> <strong><center> Open Trials </strong> </center> </td> 
+    <td><strong> <center> Change </center></strong></td>  
+  </tr> 
+  <tr> 
+    <td> <center>September </center> </td> 
+    <td> <center> 50 </center> </td> 
+    <td> <center><span class="glyphicon glyphicon-arrow-up"></span> 15% </center></td> 
+  </tr> 
+<tr> 
+    <td> <center>October </center> </td> 
+    <td> <center> 52 </center> </td> 
+    <td> <center><span class="glyphicon glyphicon-arrow-up"></span> 5% </center></td> 
+  </tr> 
+      
+</table>
+
+<hr> 
+
+<table class="table table-bordered">
+  <tr> 
+   <td><center><strong> Month</strong>  </center> </td>
+    <td> <strong><center> Closed Trials </strong> </center> </td> 
+    <td><strong> <center> Change </center></strong></td>  
+  </tr> 
+  <tr> 
+    <td> <center>September </center> </td> 
+    <td> <center> 24 </center> </td> 
+    <td> <center><span class="glyphicon glyphicon-arrow-up"></span> 15% </center></td> 
+  </tr> 
+<tr> 
+    <td> <center>October </center> </td> 
+    <td> <center> 26 </center> </td> 
+    <td> <center><span class="glyphicon glyphicon-arrow-up"></span> 3% </center></td> 
+  </tr> 
+      
+</table>
+
+<hr> 
+
+<table class="table table-bordered">
+  <tr> 
+   <td><center><strong> Month</strong>  </center> </td>
+    <td> <strong><center> Proposed Trials </strong> </center> </td> 
+    <td><strong> <center> Change </center></strong></td>  
+  </tr> 
+  <tr> 
+    <td> <center>September </center> </td> 
+    <td> <center> 10 </center> </td> 
+    <td> <center><span class="glyphicon glyphicon-arrow-up"></span> 15% </center></td> 
+  </tr> 
+<tr> 
+    <td> <center>October </center> </td> 
+    <td> <center> 12 </center> </td> 
+    <td> <center><span class="glyphicon glyphicon-arrow-up"></span> 20% </center></td> 
+  </tr> 
+      
+</table>
+
+</div> 
+</div> 
+
+<div class="row">
+
+                  <div class="col-lg-12 col-xs-12">
+<p class="app-name"> Clinical Trials Visualisation</p>
+
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+$(document).ready(function () {
+    var json = {
+        "name": "flare",
+        "children": [
+            { "name": "test1", "size": 5, "color": "#ff0000" , "id": 1},
+            { "name": "test2", "size": 5, "color": "#ffff00", "id": 2},
+            { "name": "test3", "size": 5, "color": "#ff0000", "id": 3},
+            { "name": "test4", "size": 5, "color": "#ff00ff", "id": 4 },
+            { "name": "test5", "size": 5, "color": "#0000ff", "id": 5}
+        ]
+    };
+
+    var r = 96,
+        format = d3.format(",d"),
+        fill = d3.scale.category20c();
+
+    var bubble = d3.layout.pack()
+        .sort(null)
+        .size([r, r])
+        .padding(1.5);
+
+    var vis = d3.select("#chart")
+        .append("svg")
+        .attr("width", r)
+        .attr("height", r)
+        .attr("class", "bubble");
+
+    var node = vis.selectAll("g.node")
+        .data(bubble.nodes(classes(json))
+        .filter(function (d) { return !d.children; }))
+       .enter()
+        .append("g")
+        .attr("class", "node")
+        .attr("transform", function (d) {
+            return "translate(" + d.x + "," + d.y + ")";
+        });
+
+    node.append("title")
+        .text(function (d) { return d.className + ": " + format(d.value); });
+
+    node.append("circle")
+        .attr("r", function (d) { return d.r; })
+        .on("click", function (d, i) { alert("hello world"); })
+        .style("fill", function (d) { return fill(d.packageName); });
+
+    node.append("text")
+        .attr("text-anchor", "middle")
+        .attr("dy", ".3em")
+        .text(function (d) { return d.className.substring(0, d.r / 3); });
+
+    function classes(root) {
+        var classes = [];
+
+        function recurse(name, node) {
+            if (node.children)
+                node.children.forEach(function (child) {
+                    recurse(node.name, child);
+                });
+            else
+                classes.push({
+                    packageName: name,
+                    className: node.name,
+                    value: node.size
+                });
+         }
+
+         recurse(null, root);
+         return { children: classes };
+     }
+
+ });
+
+
+</script>
+</div> 
+</div> 
+</div> 
+
+<!-- Preloader -->
+<script type="text/javascript">
+  //<![CDATA[
+    $(window).load(function() { // makes sure the whole site is loaded
+      $('#status').fadeOut(); // will first fade out the loading animation
+      $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+      $('body').delay(350).css({'overflow':'visible'});
+    })
+  //]]>
+</script> 
+
+
+</body>
+<div class="section grey footer">
+    <div class="w-container">
+      <p class="footer-text">All rights reserved, Cambridge Clinical Trials Unit, 2014</p>
+     
+       <div class="w-col w-col-12 w-clearfix nav-column footer"><a class="nav-link footer" href="http://www.nihr.ac.uk/Pages/default.aspx" target="_self">N.I.H. Research</a><br><a class="nav-link footer" href="http://www.cambridge-brc.org.uk/" target="_self">Cambridge Bio Medical Research Centre</a><br><a class="nav-link footer" href="http://www.medschl.cam.ac.uk/" target="_self">School of Clinical Medicine</a><br><a class="nav-link footer" href="http://www.cuh.org.uk/cms/research-and-development" target="_self">C.U.H. Research and Development</a></div>
+    </div>
+  </div>
+</html>

@@ -1,6 +1,6 @@
 // config/database.js
 module.exports = {
 
-	'url' : 'your_database_here' // looks like mongodb://<user>:<pass>@mongo.onmodulus.net:27017/Mikha4ot
+	'url' : 'mongodb://alouisos:rinux123@novus.modulusmongo.net:27017/bUxor9ur' // looks like mongodb://<user>:<pass>@mongo.onmodulus.net:27017/Mikha4ot
 
 };

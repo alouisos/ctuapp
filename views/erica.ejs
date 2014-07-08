@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ERICA Study, Stratification of COPD patients. </title>
+      <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/wf.css">
+    <link rel="stylesheet" type="text/css" href="css/genetium.css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen, print"/>
+
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- use jssor.slider.mini.js (39KB) or jssor.sliderc.mini.js (31KB, with caption, no slideshow) or jssor.sliders.mini.js (26KB, no caption, no slideshow) instead for release -->
+    <!-- jssor.slider.mini.js = jssor.sliderc.mini.js = jssor.sliders.mini.js = (jssor.core.js + jssor.utils.js + jssor.slider.js) -->
+    <script type="text/javascript" src="js/jssor.core.js"></script>
+    <script type="text/javascript" src="js/jssor.utils.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+     <script type="text/javascript" src="js/wf.js" defer></script>
+</head>
+
+                <header style="padding-bottom : 20px;">
+
+    <div class="w-container">
+      <div class="w-row" id="header">
+        <div class="w-col w-col-4 subfooter-left">
+          <a href="/"><img class="logo-in-header" src="images/nhs.jpg" alt="CUH NHS logo" width="290">
+          <div class="app-name">Clinical Trials Unit</div></a>
+        </div>
+       <br><div class="w-col w-col-8 w-clearfix nav-column"> <a class="login-button" clearfix href="/login-erica" target="_self">
+
+            <button type="button" class="btn btn-info btn-lg">Login</button>
+
+          </a>
+ <img src="images/erica-logo.jpg" alt="Erica logo" width="50">
+        
+      </div>
+    </div>
+</div>
+
+
+  </header>
+
+<body style="padding: 10; margin: 0; font-family: Montserrat, sans-serif; background-color: #fff;">
+    <!-- it works the same with all jquery version from 1.x to 2.x -->
+  
+    <script>
+        jQuery(document).ready(function ($) {
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 5000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                },
+
+                $ThumbnailNavigatorOptions: {
+                    $Class: $JssorThumbnailNavigator$,              //[Required] Class to create thumbnail navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+
+                    $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
+                    $AutoCenter: 0,                                 //[Optional] Auto center thumbnail items in the thumbnail navigator container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 3
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange thumbnails, default value is 1
+                    $SpacingX: 3,                                   //[Optional] Horizontal space between each thumbnail in pixel, default value is 0
+                    $SpacingY: 3,                                   //[Optional] Vertical space between each thumbnail in pixel, default value is 0
+                    $DisplayPieces: 9,                              //[Optional] Number of pieces to display, default value is 1
+                    $ParkingPosition: 260,                          //[Optional] The offset position to park thumbnail
+                    $Orientation: 1,                                //[Optional] Orientation to arrange thumbnails, 1 horizental, 2 vertical, default value is 1
+                    $DisableDrag: false                            //[Optional] Disable drag or not, default value is false
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$SetScaleWidth(Math.min(bodyWidth, 980));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+
+            ScaleSlider();
+
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $(window).bind('resize', ScaleSlider);
+            }
+
+
+            //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+            //    $(window).bind("orientationchange", ScaleSlider);
+            //}
+            //responsive code end
+        });
+    </script>
+    <div style="position: relative; width: 100%; background-color:  #25b7c0; overflow: hidden;">
+        <div style="position: relative; left: 50%; width: 5000px; text-align: center; margin-left: -2500px;">
+            <!-- Jssor Slider Begin -->
+            <div id="slider1_container" style="position: relative; margin: 0 auto;
+                top: 0px; left: 0px; width: 980px; height: 400px;  top center no-repeat;">
+                <!-- Loading Screen -->
+                <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+                        top: 0px; left: 0px; width: 100%; height: 100%;">
+                    </div>
+                    <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center;
+                        top: 0px; left: 0px; width: 100%; height: 100%;">
+                    </div>
+                </div>
+                <!-- Slides Container -->
+                <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 980px;
+                    height: 400px; overflow: hidden;">
+                    <div>
+                        <div style="position: absolute; width: 480px; height: 300px; top: 10px; left: 10px;
+                            text-align: left; line-height: 1.8em; font-size: 12px;">
+                            <br />
+                            <span style="display: block; line-height: 1em; text-transform: uppercase; font-size: 35px;
+                                color: #FFFFFF;">ERICA</span>
+                            <br />
+                            <br />
+                            <span style="display: block; line-height: 1.2em; font-size: 1.4em; color: #FFFFFF;">
+                                Evaluation of the Role of Inflammation in non pulmonary disease manifestations in Chronic Airways project  </span>
+                            <br />
+                            <span style="display: block; weight: bold; line-height: 1.3em; font-size: 1.3em; color: #FFFFFF;">
+                                The objective of the ERICA project is to relate systemic inflammation, defined by elevated fibrinogen, to non-pulmonary disease manifestations in COPD identified by candidate bedside biomarkers of cardiovascular and muscle function.</span>
+                            <br />
+                            <br />
+                          <a class="nav-link2" href="#erica-study" target="_self">
+                                <h3 style="color: #FFFFFF;"> Read More...<h3></a>
+                        </div>
+                        <img src="images/erica-words.jpg" style="position: absolute; top: 23px; left: 520px; width: 480px; height: 300px;" />
+                        <img u="thumb" src="images/erica-words.jpg" />
+                    </div>
+                    <div>
+                        <div style="position: absolute; width: 480px; height: 300px; top: 10px; left: 10px;
+                            text-align: left; line-height: 1.8em; font-size: 12px;">
+                            <br />
+                            <span style="display: block; line-height: 1em; font-size: 35px;
+                                color: #FFFFFF;">Stratified Medicine</span>
+                            <br />
+                            <br />
+                            <span style="display: block; line-height: 1.2em; font-size: 1.4em; color: #FFFFFF;">
+                            Identification of biomarkers that enables further categorisation of the COPD population – a stratified medical approach. 
+    
+                              </span>
+                            <br />
+                            <span style="display: block; weight: bold; line-height: 1.3em; font-size: 1.3em; color: #FFFFFF;">
+                                Treatment becomes more focussed and specifically catered <br> towards phenotype as opposed to the generic diagnosis. We are exploring the benefits of stratified therapeutic approaches against one for all solution. 
+                                </span>
+                            <br />
+                            <br />
+                          <a href="/erica-stratified">
+                                <h3 style="color: #FFFFFF;"> Read More...<h3></a>
+                        </div>
+                        <img src="images/stratified.png" style="position: absolute; top: 23px; left: 520px; width: 480px; height: 300px;" />
+                        <img u="thumb" src="images/stratified.png" />
+                    </div>
+                   <div>
+                        <div style="position: absolute; width: 480px; height: 300px; top: 10px; left: 10px;
+                            text-align: left; line-height: 1.8em; font-size: 12px;">
+                            <br />
+                            <span style="display: block; line-height: 1em;  font-size: 35px;
+                                color: #FFFFFF;">Partners</span>
+                            <br />
+                            <br />
+                            <span style="display: block; line-height: 1.2em; font-size: 1.4em; color: #FFFFFF;">
+                                The ERICA project has six partners.   </span>
+                            <br />
+                            <span style="display: block; weight: bold; line-height: 1.3em; font-size: 1.3em; color: #FFFFFF;">
+                                Five universities and our Industry partner, GSK. <br><br> The universities are Nottingham, Cardiff, The Royal Bromptom Hosptial (Imperial College London), Cambridge and Edinburgh.</span>
+                            <br />
+                            <br />
+                          <a href="">
+                                <h3 style="color: #FFFFFF;"> <h3></a>
+                        </div>
+                        <img src="images/partners.jpg" style="position: absolute; top: 23px; left: 520px; width: 480px; height: 300px;" />
+                        <img u="thumb" src="images/partners.jpg" />
+                    </div>
+                    <div>
+                        <div style="position: absolute; width: 480px; height: 300px; top: 10px; left: 10px;
+                            text-align: left; line-height: 1.8em; font-size: 12px;">
+                            <br />
+                            <span style="display: block; line-height: 1em; font-size: 25px;
+                                color: #FFFFFF;">Technology Innovation Board</span>
+                            <br />
+                            <br />
+                            <span style="display: block; line-height: 1.2em; font-size: 1.4em; color: #FFFFFF;">
+                                The technology strategy board is the UK`s innovation agency that supports a wide range of research areas including; biosciences, food and healthcare amongst others. 
+                                  </span>
+                            <br />
+                            <span style="display: block; weight: bold; line-height: 1.3em; font-size: 1.3em; color: #FFFFFF;">
+                                The purpose of their support is to aid economic stimulus through engaging and financing innovated technology based ideas born through business led entrepreneurship. They provide funding for research, development and commercialisation.
+
+                                </span>
+                            <br />
+                            <br />
+                          <a href="https://www.innovateuk.org/">
+                                <h3 style="color: #FFFFFF;"> Visit TSB Website<h3></a>
+                        </div>
+                        <img src="images/technology-innovation.jpg" style="position: absolute; top: 23px; left: 520px; width: 480px; height: 300px;" />
+                        <img u="thumb" src="images/technology-innovation.jpg" />
+                    </div>
+                    
+                </div>
+                <!-- Arrow Navigator Skin Begin -->
+                <style>
+                    /* jssor slider arrow navigator skin 07 css */
+                    /*
+                    .jssora07l              (normal)
+                    .jssora07r              (normal)
+                    .jssora07l:hover        (normal mouseover)
+                    .jssora07r:hover        (normal mouseover)
+                    .jssora07ldn            (mousedown)
+                    .jssora07rdn            (mousedown)
+                    */
+                    .jssora07l, .jssora07r, .jssora07ldn, .jssora07rdn
+                    {
+                        position: absolute;
+                        cursor: pointer;
+                        display: block;
+                        background: url(img/a07.png) no-repeat;
+                        overflow: hidden;
+                    }
+                    .jssora07l
+                    {
+                        background-position: -5px -35px;
+                    }
+                    .jssora07r
+                    {
+                        background-position: -65px -35px;
+                    }
+                    .jssora07l:hover
+                    {
+                        background-position: -125px -35px;
+                    }
+                    .jssora07r:hover
+                    {
+                        background-position: -185px -35px;
+                    }
+                    .jssora07ldn
+                    {
+                        background-position: -245px -35px;
+                    }
+                    .jssora07rdn
+                    {
+                        background-position: -305px -35px;
+                    }
+                </style>
+                <!-- Arrow Left -->
+                <span u="arrowleft" class="jssora07l" style="width: 50px; height: 50px; top: 123px;
+                    left: 8px;"></span>
+                <!-- Arrow Right -->
+                <span u="arrowright" class="jssora07r" style="width: 50px; height: 50px; top: 123px;
+                    right: 8px"></span>
+                <!-- Arrow Navigator Skin End -->
+                <!-- ThumbnailNavigator Skin Begin -->
+                <div u="thumbnavigator" class="jssort04" style="position: absolute; width: 600px;
+                    height: 60px; right: 0px; bottom: 0px;">
+                    <!-- Thumbnail Item Skin Begin -->
+                    <style>
+                        /* jssor slider thumbnail navigator skin 04 css */
+                        /*
+                        .jssort04 .p            (normal)
+                        .jssort04 .p:hover      (normal mouseover)
+                        .jssort04 .pav          (active)
+                        .jssort04 .pav:hover    (active mouseover)
+                        .jssort04 .pdn          (mousedown)
+                        */
+                        .jssort04 .w, .jssort04 .pav:hover .w
+                        {
+                            position: absolute;
+                            width: 60px;
+                            height: 30px;
+                            border: #0099FF 1px solid;
+                        }
+                        * html .jssort04 .w
+                        {
+                            width: /**/ 62px;
+                            height: /**/ 32px;
+                        }
+                        .jssort04 .pdn .w, .jssort04 .pav .w
+                        {
+                            border-style: solid;
+                        }
+                        .jssort04 .c
+                        {
+                            width: 62px;
+                            height: 32px;
+                            filter: alpha(opacity=45);
+                            opacity: .45;
+                            transition: opacity .6s;
+                            -moz-transition: opacity .6s;
+                            -webkit-transition: opacity .6s;
+                            -o-transition: opacity .6s;
+                        }
+                        .jssort04 .p:hover .c, .jssort04 .pav .c
+                        {
+                            filter: alpha(opacity=0);
+                            opacity: 0;
+                        }
+                        .jssort04 .p:hover .c
+                        {
+                            transition: none;
+                            -moz-transition: none;
+                            -webkit-transition: none;
+                            -o-transition: none;
+                        }
+                    </style>
+                    <div u="slides" style="bottom: 25px; right: 30px;">
+                        <div u="prototype" class="p" style="position: absolute; width: 62px; height: 32px; top: 0; left: 0;">
+                            <div class="w">
+                                <thumbnailtemplate style="width: 100%; height: 100%; border: none; position: absolute; top: 0; left: 0;"></thumbnailtemplate>
+                            </div>
+                            <div class="c" style="position: absolute; background-color: #000; top: 0; left: 0">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Thumbnail Item Skin End -->
+                </div>
+                <!-- ThumbnailNavigator Skin End -->
+                <a style="display: none" href="http://www.jssor.com">slideshow html</a>
+            </div>
+            <!-- Jssor Slider End -->
+        </div>
+    </div></div> 
+
+ <div class="w-container" id="page-nav-services">
+      <div class="w-row organize-row">
+        <div class="w-col w-col-12">
+        
+       <center><h2 class="hero-header2" id="erica-study"> THE ERICA STUDY </h2></center>
+          <p class="hero-subtitle2">
+           In the EU, the total direct cost of Chronic Obstructive Pulmonary Disease (COPD) is thought to be €38.6 billion. COPD is also a leading cause of lost working days, and it is estimated that in Europe, productivity losses due to COPD amount to a further €28.5 billion annually. UK and US figures are proportionately in line with these. Admission with an acute exacerbation of COPD is costly (54.3% of direct costs) and in the UK there are 130,000 such admissions annually and there is a 30% readmission rate. <br><br>
+
+           <div class="w-col w-col-12">
+        <center><img class="shared-images grayscale" src="images/erica-infographic.png" width="500px" height="700px" alt="CCTU services"></center>
+        </div>
+
+           Such exacerbations have a profound deleterious effect on muscle function.The applicants have shown that an intervention which improves skeletal muscle function and pulmonary rehabilitation, can partly reduce readmission rate. COPD is also an independant risk factor for cardiovasular disease which has a marked impact on morbidity and mortlity; approximately 30% of COPD patients have a ‘cardiovascular phenotype’ with a 3-fold risk of cardiovascular admission. Conversations and qualitative research with payers shows that they fully understand the budgetary impact of poorly treated COPD and so view early, effective drug treatment as a key strategy to reduce overall costs. <br><br>
+
+The Evaluation of the Role of Inflammation in non pulmonary disease manifestations in Chronic Airways project (ERICA), funded by the Technology Strategy Board, aims to take research into COPD forward by studying the effects of inflamation in disease. The objective of the ERICA project is to relate systemic inflammation, defined by elevated fibrinogen, to non-pulmonary disease manifestations in COPD identified by candidate bedside biomarkers of cardiovascular and muscle function. 
+
+<br><br> This project has six partners, including five universities and one EFPIA member. The universities include: Nottingham, Cardiff, The Royal Bromptom hosptial (Imperial College London), Cambridge, Edinburgh. The EFPIA member is GlaxoSmithKline.
+In addition, the ERICA project has links with some of the key projects in the field of COPD research, Figure 1. The GSK funded ECLIPSE project has been running for several years, and the ERICA project is linked through members from clinical trials in ECLIPSE and through the learning which ECLIPSE has afforded to experts in the field to date.
+ <br><br>
+
+The overarching aim of ERICA is to relate systemic inflammation, defined by an elevated fibrinogen, to non-pulmonary disease manifestations in COPD identified by candidate bedside biomarkers of cardiovascular and muscle function. The project will extend the understanding of these biomarkers through cross-sectional evaluation of subjects recruited from existing well-characterised cohorts in the UK and using experimental medicine hypothesis-testing trials in patients with evidence of systemic inflammation.  The impact of this work will be two fold:  (i) generating evidence on stratification and efficacy biomarkers so facilitating the design of smaller, more efficient Phase I-III clinical trials of medicines targeting inflammatory COPD subsets thereby reducing attrition of new medicines (ii) supporting the development of two specific therapies thus validating a stratified medicine approach.
+ </p> 
+
+        </div>
+        <div class="w-col w-col-12">
+        <center><img class="shared-images grayscale" src="images/erica1.png" width="445px" height="300px" alt="CCTU services"></center>
+        </div>
+      </div>
+    </div>
+
+ </div>
+      
+ <div class="w-container">
+      <div class="w-row organize-row">
+        <div class="w-col w-col-12">
+               <center><h2 class="hero-header2" id="erica-study"> Publications</h2></center>
+          <p class="hero-subtitle2">
+1. Alvar Agusti, Patricia Sobradillo and Bartolome Celli, Addressing the complexity of chronic obstructive pulmonary disease: From phenotypes and biomarkers to scale-free networks, systems biology, and P4 medicine, American Journal of respiratory and critical care medicine, Vol. 183, 2011.<br><br>
+2. M.I. Polkey, I.B. Wilkinson, C.M. McEniery, MD, N.S. Gale, J.R. Cockcroft, P.M. Calverley, R. Tal-Singer, Preliminary Results From ERICA, A Unique Consortium Investigating Extrapulmonary Manifestations Of COPD, [Publication Page: A2890]<br><br>
+3. D. Mohan, MD, C. McEniery, MD, N. Gale, PhD, J. Edwards, C.E. Bolton, J. Cockcroft, W. MacNee, D.A. Lomas, D. Newby, P.M. Calverley, M.I. Polkey, I.B. Wilkinson, R. Tal-Singer, Harmonization Of Inter-Site Data Collection In The Novel ERICA Consortium Investigating The Extrapulmonary Manifestations of COPD, [Publication Page: A2840]<br><br>
+4. M.Fisk, D.Mohan, J. Cheriyan, L.Yang, J.Fuld, C.M.McEniery, R.Tal-Singer, M.I.Polkey, I.B.Wilkinson: Evaluation of losmapimod in patients with chronic obstructive pulmonary disease (COPD) with systemic inflammation stratified using fibrinogen (‘EVOLUTION’): Rationale and protocol. <a href="http://www.arteryresearch.com/article/S1872-9312(13)00423-7/fulltext"> Published 11th November 2013 on Artery Research. </a><br><br>
+
+<center><div class="w-col w-col-12"> <a class="login-button" clearfix href="#header" target="_self">
+
+            <button type="button" class="btn btn-info btn-lg">Back to Top</button></div> </center>
+
+          </a>
+
+  
+</div> </div> </div> 
+</body>
+
+
+ <div class="section footer">
+          <div class="w-container">
+      <p class="footer-text">All rights reserved, Cambridge Clinical Trials Unit, 2014</p>
+     
+      
+    </div>
+  </div>
+</html>

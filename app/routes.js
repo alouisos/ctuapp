@@ -7,18 +7,83 @@ module.exports = function(app, passport) {
 		res.render('index.ejs');
 	});
 
+	app.get('/services', function(req,res) { 
+		res.render('services.ejs')
+	});
+
+	app.get('/contact', function(req, res) { 
+		res.render('contact.ejs')
+	});
+
+	app.get('/rescue-asdh', function(req, res) { 
+		res.render('rescue-asdh')
+
+	}); 
+
 	// PROFILE SECTION =========================
-	app.get('/profile', isLoggedIn, function(req, res) {
-		res.render('profile.ejs', {
+	app.get('/erica-loggedin', isLoggedIn, function(req, res) {
+		res.render('erica-loggedin.ejs', {
 			user : req.user
 		});
 	});
 
+	app.get('/rescue-asdh-loggedin', isLoggedIn, function(req, res) {
+		res.render('rescue-asdh-loggedin.ejs', {
+			user : req.user
+		});
+	});
+		app.get('/earnest-loggedin', isLoggedIn, function(req, res) {
+		res.render('earnest-loggedin.ejs', {
+			user : req.user
+		});
+	});
+
+app.get('/earnest', function(req, res) { 
+	res.render('earnest.ejs')
+	}); 
+
+app.get('/erica-study', function(req,res) { 
+	res.render('erica-study.ejs')
+}); 
+
+app.get('/cctu-cardio', function(req,res) { 
+		res.render('cctu-cardio.ejs')
+});
+
+app.get('/cctu-cancer', function(req, res) { 
+		res.render('cctu-cancer.ejs')
+}); 
+
+app.get('/cctu-surgery', function(req, res) { 
+		res.render('cctu-surgery.ejs')
+}); 
+
+app.get('/cctu-paediatrics', function(req,res){ 
+		res.render('cctu-paediatrics.ejs')
+		}); 
+app.get('/cctu-other', function(req,res){ 
+		res.render('cctu-other.ejs')
+	});
+
+app.get('/erica-stratified', function(req, res) { 
+	res.render("erica-stratified.ejs"); 
+	}); 
+
+app.get('/erica', function(req,res) { 
+	res.render('erica.ejs')
+	}); 
+
 	// LOGOUT ==============================
 	app.get('/logout', function(req, res) {
 		req.logout();
-		res.redirect('/');
+		res.redirect('/erica');
 	});
+
+app.get('/logout-earnest', function(req, res) {
+		req.logout();
+		res.redirect('/earnest');
+	});
+
 
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================
@@ -27,14 +92,43 @@ module.exports = function(app, passport) {
 	// locally --------------------------------
 		// LOGIN ===============================
 		// show the login form
-		app.get('/login', function(req, res) {
-			res.render('login.ejs', { message: req.flash('loginMessage') });
+		app.get('/login-erica', function(req, res) {
+			res.render('login-erica.ejs', { message: req.flash('loginMessage') });
 		});
 
 		// process the login form
-		app.post('/login', passport.authenticate('local-login', {
-			successRedirect : '/profile', // redirect to the secure profile section
-			failureRedirect : '/login', // redirect back to the signup page if there is an error
+		app.post('/login-erica', passport.authenticate('local-login', {
+			successRedirect : '/erica-loggedin', // redirect to the secure profile section
+			failureRedirect : '/login-erica', // redirect back to the signup page if there is an error
+			failureFlash : true // allow flash messages
+		}));
+
+
+			// locally --------------------------------
+		// LOGIN ===============================
+		// show the login form
+		app.get('/login-earnest', function(req, res) {
+			res.render('login-earnest.ejs', { message: req.flash('loginMessage') });
+		});
+
+		// process the login form
+		app.post('/login-earnest', passport.authenticate('local-login', {
+			successRedirect : '/earnest-loggedin', // redirect to the secure profile section
+			failureRedirect : 'login-earnest', // redirect back to the signup page if there is an error
+			failureFlash : true // allow flash messages
+		}));
+
+			// locally --------------------------------
+		// LOGIN ===============================
+		// show the login form
+		app.get('/login-rescue-asdh', function(req, res) {
+			res.render('login-rescue-asdh.ejs', { message: req.flash('loginMessage') });
+		});
+
+		// process the login form
+		app.post('/login-rescue-asdh', passport.authenticate('local-login', {
+			successRedirect : '/rescue-asdh-loggedin', // redirect to the secure profile section
+			failureRedirect : 'login-rescue-asdh', // redirect back to the signup page if there is an error
 			failureFlash : true // allow flash messages
 		}));
 
@@ -46,7 +140,7 @@ module.exports = function(app, passport) {
 
 		// process the signup form
 		app.post('/signup', passport.authenticate('local-signup', {
-			successRedirect : '/profile', // redirect to the secure profile section
+			successRedirect : '/cctu-clinical-trials', // redirect to the secure profile section
 			failureRedirect : '/signup', // redirect back to the signup page if there is an error
 			failureFlash : true // allow flash messages
 		}));

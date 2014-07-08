@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ERICA Study, Stratification of COPD patients. </title>
+      <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/wf.css">
+    <link rel="stylesheet" type="text/css" href="css/genetium.css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen, print"/>
+
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- use jssor.slider.mini.js (39KB) or jssor.sliderc.mini.js (31KB, with caption, no slideshow) or jssor.sliders.mini.js (26KB, no caption, no slideshow) instead for release -->
+    <!-- jssor.slider.mini.js = jssor.sliderc.mini.js = jssor.sliders.mini.js = (jssor.core.js + jssor.utils.js + jssor.slider.js) -->
+    <script type="text/javascript" src="js/jssor.core.js"></script>
+    <script type="text/javascript" src="js/jssor.utils.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+     <script type="text/javascript" src="js/wf.js" defer></script>
+</head>
+
+                <header style="padding-bottom : 20px;">
+
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-4 subfooter-left">
+          <a href="/"><img class="logo-in-header" src="images/nhs.jpg" alt="CUH NHS logo" width="290">
+          <div class="app-name">Clinical Trials Unit</div></a>
+        </div>
+       <br><div class="w-col w-col-8 w-clearfix nav-column"> <a class="login-button" clearfix href="/login" target="_self">
+
+            <button type="button" class="btn btn-info btn-lg">Login</button>
+
+          </a>
+ <img src="images/erica-logo.jpg" alt="Erica logo" width="50">
+        
+      </div>
+    </div>
+</div>
+
+
+  </header>
+
+<body style="padding: 10; margin: 0; font-family: Montserrat, sans-serif; background-color: #fff;">
+    <!-- it works the same with all jquery version from 1.x to 2.x -->
+  
+    <script>
+        jQuery(document).ready(function ($) {
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 5000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,                    //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0,                           //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                },
+
+                $ThumbnailNavigatorOptions: {
+                    $Class: $JssorThumbnailNavigator$,              //[Required] Class to create thumbnail navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+
+                    $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
+                    $AutoCenter: 0,                                 //[Optional] Auto center thumbnail items in the thumbnail navigator container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 3
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange thumbnails, default value is 1
+                    $SpacingX: 3,                                   //[Optional] Horizontal space between each thumbnail in pixel, default value is 0
+                    $SpacingY: 3,                                   //[Optional] Vertical space between each thumbnail in pixel, default value is 0
+                    $DisplayPieces: 9,                              //[Optional] Number of pieces to display, default value is 1
+                    $ParkingPosition: 260,                          //[Optional] The offset position to park thumbnail
+                    $Orientation: 1,                                //[Optional] Orientation to arrange thumbnails, 1 horizental, 2 vertical, default value is 1
+                    $DisableDrag: false                            //[Optional] Disable drag or not, default value is false
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$SetScaleWidth(Math.min(bodyWidth, 980));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+
+            ScaleSlider();
+
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $(window).bind('resize', ScaleSlider);
+            }
+
+
+            //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+            //    $(window).bind("orientationchange", ScaleSlider);
+            //}
+            //responsive code end
+        });
+    </script>
+    <div style="position: relative; width: 100%; background-color:  #25b7c0; overflow: hidden;">
+        <div style="position: relative; left: 50%; width: 5000px; text-align: center; margin-left: -2500px;">
+            <!-- Jssor Slider Begin -->
+            <div id="slider1_container" style="position: relative; margin: 0 auto;
+                top: 0px; left: 0px; width: 980px; height: 400px;  top center no-repeat;">
+                <!-- Loading Screen -->
+                <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+                        top: 0px; left: 0px; width: 100%; height: 100%;">
+                    </div>
+                    <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center;
+                        top: 0px; left: 0px; width: 100%; height: 100%;">
+                    </div>
+                </div>
+                <!-- Slides Container -->
+                <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 980px;
+                    height: 400px; overflow: hidden;">
+                    <div>
+                        <div style="position: absolute; width: 480px; height: 300px; top: 10px; left: 10px;
+                            text-align: left; line-height: 1.8em; font-size: 12px;">
+                            <br />
+                            <span style="display: block; line-height: 1em; text-transform: uppercase; font-size: 35px;
+                                color: #FFFFFF;">ERICA</span>
+                            <br />
+                            <br />
+                            <span style="display: block; line-height: 1.2em; font-size: 1.4em; color: #FFFFFF;">
+                                Evaluation of the Role of Inflammation in non pulmonary disease manifestations in Chronic Airways project  </span>
+                            <br />
+                            <span style="display: block; weight: bold; line-height: 1.3em; font-size: 1.3em; color: #FFFFFF;">
+                                The objective of the ERICA project is to relate systemic inflammation, defined by elevated fibrinogen, to non-pulmonary disease manifestations in COPD identified by candidate bedside biomarkers of cardiovascular and muscle function.</span>
+                            <br />
+                            <br />
+                          <a class="nav-link" href="/erica">
+                                <h3 style="color: #FFFFFF;"> Read More...<h3></a>
+                        </div>
+                        <img src="images/erica-words.jpg" style="position: absolute; top: 23px; left: 520px; width: 480px; height: 300px;" />
+                        <img u="thumb" src="images/erica-words.jpg" />
+                    </div>
+                    <div>
+                        <div style="position: absolute; width: 480px; height: 300px; top: 10px; left: 10px;
+                            text-align: left; line-height: 1.8em; font-size: 12px;">
+                            <br />
+                            <span style="display: block; line-height: 1em; font-size: 35px;
+                                color: #FFFFFF;">Stratified Medicine</span>
+                            <br />
+                            <br />
+                            <span style="display: block; line-height: 1.2em; font-size: 1.4em; color: #FFFFFF;">
+                            Identification of biomarkers that enables further categorisation of the COPD population – a stratified medical approach. 
+    
+                              </span>
+                            <br />
+                            <span style="display: block; weight: bold; line-height: 1.3em; font-size: 1.3em; color: #FFFFFF;">
+                                Treatment becomes more focussed and specifically catered <br> towards phenotype as opposed to the generic diagnosis. We are exploring the benefits of stratified therapeutic approaches against one for all solution. 
+                                </span>
+                            <br />
+                            <br />
+                          <a href="/erica-stratified">
+                                <h3 style="color: #FFFFFF;"> Read More...<h3></a>
+                        </div>
+                        <img src="images/stratified.png" style="position: absolute; top: 23px; left: 520px; width: 480px; height: 300px;" />
+                        <img u="thumb" src="images/stratified.png" />
+                    </div>
+                   <div>
+                        <div style="position: absolute; width: 480px; height: 300px; top: 10px; left: 10px;
+                            text-align: left; line-height: 1.8em; font-size: 12px;">
+                            <br />
+                            <span style="display: block; line-height: 1em;  font-size: 35px;
+                                color: #FFFFFF;">Partners</span>
+                            <br />
+                            <br />
+                            <span style="display: block; line-height: 1.2em; font-size: 1.4em; color: #FFFFFF;">
+                                The ERICA project has six partners.   </span>
+                            <br />
+                            <span style="display: block; weight: bold; line-height: 1.3em; font-size: 1.3em; color: #FFFFFF;">
+                                Five universities and our Industry partner, GSK. <br><br> The universities are Nottingham, Cardiff, The Royal Bromptom Hosptial (Imperial College London), Cambridge and Edinburgh.</span>
+                            <br />
+                            <br />
+                          <a href="">
+                                <h3 style="color: #FFFFFF;"> <h3></a>
+                        </div>
+                        <img src="images/partners.jpg" style="position: absolute; top: 23px; left: 520px; width: 480px; height: 300px;" />
+                        <img u="thumb" src="images/partners.jpg" />
+                    </div>
+                    <div>
+                        <div style="position: absolute; width: 480px; height: 300px; top: 10px; left: 10px;
+                            text-align: left; line-height: 1.8em; font-size: 12px;">
+                            <br />
+                            <span style="display: block; line-height: 1em; font-size: 25px;
+                                color: #FFFFFF;">Technology Innovation Board</span>
+                            <br />
+                            <br />
+                            <span style="display: block; line-height: 1.2em; font-size: 1.4em; color: #FFFFFF;">
+                                The technology strategy board is the UK`s innovation agency that supports a wide range of research areas including; biosciences, food and healthcare amongst others. 
+                                  </span>
+                            <br />
+                            <span style="display: block; weight: bold; line-height: 1.3em; font-size: 1.3em; color: #FFFFFF;">
+                                The purpose of their support is to aid economic stimulus through engaging and financing innovated technology based ideas born through business led entrepreneurship. They provide funding for research, development and commercialisation.
+
+                                </span>
+                            <br />
+                            <br />
+                          <a href="https://www.innovateuk.org/">
+                                <h3 style="color: #FFFFFF;"> Visit TSB Website<h3></a>
+                        </div>
+                        <img src="images/technology-innovation.jpg" style="position: absolute; top: 23px; left: 520px; width: 480px; height: 300px;" />
+                        <img u="thumb" src="images/technology-innovation.jpg" />
+                    </div>
+                    
+                </div>
+                <!-- Arrow Navigator Skin Begin -->
+                <style>
+                    /* jssor slider arrow navigator skin 07 css */
+                    /*
+                    .jssora07l              (normal)
+                    .jssora07r              (normal)
+                    .jssora07l:hover        (normal mouseover)
+                    .jssora07r:hover        (normal mouseover)
+                    .jssora07ldn            (mousedown)
+                    .jssora07rdn            (mousedown)
+                    */
+                    .jssora07l, .jssora07r, .jssora07ldn, .jssora07rdn
+                    {
+                        position: absolute;
+                        cursor: pointer;
+                        display: block;
+                        background: url(img/a07.png) no-repeat;
+                        overflow: hidden;
+                    }
+                    .jssora07l
+                    {
+                        background-position: -5px -35px;
+                    }
+                    .jssora07r
+                    {
+                        background-position: -65px -35px;
+                    }
+                    .jssora07l:hover
+                    {
+                        background-position: -125px -35px;
+                    }
+                    .jssora07r:hover
+                    {
+                        background-position: -185px -35px;
+                    }
+                    .jssora07ldn
+                    {
+                        background-position: -245px -35px;
+                    }
+                    .jssora07rdn
+                    {
+                        background-position: -305px -35px;
+                    }
+                </style>
+                <!-- Arrow Left -->
+                <span u="arrowleft" class="jssora07l" style="width: 50px; height: 50px; top: 123px;
+                    left: 8px;"></span>
+                <!-- Arrow Right -->
+                <span u="arrowright" class="jssora07r" style="width: 50px; height: 50px; top: 123px;
+                    right: 8px"></span>
+                <!-- Arrow Navigator Skin End -->
+                <!-- ThumbnailNavigator Skin Begin -->
+                <div u="thumbnavigator" class="jssort04" style="position: absolute; width: 600px;
+                    height: 60px; right: 0px; bottom: 0px;">
+                    <!-- Thumbnail Item Skin Begin -->
+                    <style>
+                        /* jssor slider thumbnail navigator skin 04 css */
+                        /*
+                        .jssort04 .p            (normal)
+                        .jssort04 .p:hover      (normal mouseover)
+                        .jssort04 .pav          (active)
+                        .jssort04 .pav:hover    (active mouseover)
+                        .jssort04 .pdn          (mousedown)
+                        */
+                        .jssort04 .w, .jssort04 .pav:hover .w
+                        {
+                            position: absolute;
+                            width: 60px;
+                            height: 30px;
+                            border: #0099FF 1px solid;
+                        }
+                        * html .jssort04 .w
+                        {
+                            width: /**/ 62px;
+                            height: /**/ 32px;
+                        }
+                        .jssort04 .pdn .w, .jssort04 .pav .w
+                        {
+                            border-style: solid;
+                        }
+                        .jssort04 .c
+                        {
+                            width: 62px;
+                            height: 32px;
+                            filter: alpha(opacity=45);
+                            opacity: .45;
+                            transition: opacity .6s;
+                            -moz-transition: opacity .6s;
+                            -webkit-transition: opacity .6s;
+                            -o-transition: opacity .6s;
+                        }
+                        .jssort04 .p:hover .c, .jssort04 .pav .c
+                        {
+                            filter: alpha(opacity=0);
+                            opacity: 0;
+                        }
+                        .jssort04 .p:hover .c
+                        {
+                            transition: none;
+                            -moz-transition: none;
+                            -webkit-transition: none;
+                            -o-transition: none;
+                        }
+                    </style>
+                    <div u="slides" style="bottom: 25px; right: 30px;">
+                        <div u="prototype" class="p" style="position: absolute; width: 62px; height: 32px; top: 0; left: 0;">
+                            <div class="w">
+                                <thumbnailtemplate style="width: 100%; height: 100%; border: none; position: absolute; top: 0; left: 0;"></thumbnailtemplate>
+                            </div>
+                            <div class="c" style="position: absolute; background-color: #000; top: 0; left: 0">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Thumbnail Item Skin End -->
+                </div>
+                <!-- ThumbnailNavigator Skin End -->
+                <a style="display: none" href="http://www.jssor.com">slideshow html</a>
+            </div>
+            <!-- Jssor Slider End -->
+        </div>
+    </div></div> 
+
+ <div class="w-container" id="page-nav-services">
+      <div class="w-row organize-row">
+        <div class="w-col w-col-12">
+        
+       <center><h2 class="hero-header2"> Stratified Medicine: A patients/doctors perspective</h2></center>
+          <p class="hero-subtitle2">
+
+<br><br>
+Stratified medicine is the study of populations to identify phenotypes for highly focussed medical treatment.<br><br>
+Disease can be diagnosed and categorised. Treatment that follows diagnosis will serve to address the disease directly, and also alleviate the symptoms affiliated to the disease.
+If ten people have the same disease, it stands to reason that if each receive the same treatment, they will effectively heal, provided that the treatment is sound and that there are no adverse effects (allergies). This is often the case with a bacterial infection. Use an effective antibiotic, and bye bacterial infection.<br><br>
+However, what if the disease is a little more complicated and has more than one possible cause?  for example, COPD. The diagnosis maybe the same in ten given subjects, but the underlying causes in each case can be very different. Under these circumstances the same treatment for each patient may not be effective.
+Perhaps only one of the sufferers will be effectively cured by the chosen treatment. There are variations within the population.<br><br>
+But how do they vary?
+Firstly, you can discriminate between individuals by identifying the cause of the condition. COPD for example, may be caused by smoking, breathing to much traffic pollution, genetic roots, or inhalation of cooking oils.
+You can then identify the type of COPD that is present, ie, the types of cells that are affected.
+It stands to reason that the path between cause and effect in each case is different, but what are the paths?
+Are there markers that elucidate the specific mechanism of the disease?
+Are there other non-direct biomarkers for each form of the disease?
+If the answers are yes, who out of the population have the same biomarkers?<br><br>
+Identification of biomarkers enables further categorisation of the population – a stratified medical approach.
+The population is highly categorised, and so it follows that treatment becomes more focussed and specifically catered towards phenotype as opposed to the generic diagnosis.
+However, a  greater understanding of disease phenotypes provides a necessity for a greater number of treatments, including drugs. As such,protocols for drug development strategies are becoming more focussed on identifying the biomarkers of disease so that drug development processes and affects will achieve greater success.</p>
+
+
+ 
+ <center><h2 class="hero-header2"> A pharmaceutical perspective 
+</h2></center> <p class="hero-subtitle2">
+Patient care is paramount when developing treatments for a disease. As such, drug approval processes are very stringent.
+Fromone thousand discovered chemicals that show promise for effective drug application, one may be approved to proceed to clinical trials.One in four of these drugs are approved for public use.It can take ten years for a drug to be clinically approved, requiring as much as 2 billion euro`s to be spent on its development.It follows that if a drug is not finally approved, alot of money is seen to have been wasted.
+A number of drugs fail the clinical trial process due to a limited patient response to the drug. For example, if only 5 percent of the ill test subjects respond to the new drug treatment, the drug is deemed ineffective and so unfit for public use.
+What if the population that represents that 5% success rate of the new drug, has a specific clinical predisposition that reacts positively to the drug?
+If the predisposition is understood, it may be possible to get a much higher success rate for the new drug, by being more selective with the test subjects. It is possible that many drugs have failed trials due to a low understanding of the clinical features presented by a given disease, and subsequently the target on which the drug acts.<br><br>
+This realisation has given rise to the idea of stratified medicine, otherwise known as personalised medicine.
+Stratified medicine is the treatment of a patients true phenotype as opposed to the generic or imperial treatment of a disease.
+To achieve this, an understanding of the underlying mechanisms that contribute to a disease will enable a patient specific treatment.This is a very exciting approach towards patient care, that promises better outcomes for the sufferer. However, it costs money to improve understanding.</p>
+
+<center><h2 class="hero-header2"> Is stratified medicine economical?
+</h2></center>
+ 
+<p class="hero-subtitle2">
+The economic crisis of late has left an impact on the healthcare industry. Reduced investment from public and private sectors has provided increased interest in empirical treatment over customised healthcare, with little change pencilled in for the near future.
+With more and more evidence highlighting the benefits of targeted treatment, the future of stratified medicine is largely in the balance,with medical progress and justifiable investmentlying comfortably on opposing trays.
+Empirical treatment is a blanket attack on a diagnosed disease, regardless of the underlying causes. They are cheaper to the patient (or insurer), and they cover massive cohorts of patients, and so can expect to provide a sizable return to their investors.
+Stratified medicine has similar developmental costs to the empirical model, but addresses relatively small cohorts of patients in comparison. This increases the purchase price of stratified medicine far beyond the costs charged for their empirical counterparts.
+Because of the high market costs of stratified medicine some governments are capping price tags, resulting with further losses to investors. In short, considering the size of the patient cohort, the cost to the patient and the return in investment, stratified medicine does not provide much of an incentive to the those that want to invest their money.<br><br>
+So why bother with stratified medicine when there is no financial benefit? 
+This is something the public sector has recognised as a problem, and an extensive list of possible incentives have emerged. It is believed that such incentives will attract sizable interest in the personalised approach, despite the market woes.
+They include: Non patent exclusivity designations, orphan drug designation, biological data exclusivity, new chemical entity exclusivity, new indication exclusivity, paediatric study extension, patent exclusivity extensions, preferred or accelerated regulatory treatment, patent restoration, patent law changes, accelerated approval, priority review vouchers, rolling approvals, advanced market commitments, novel clinical trial designs, indirect financial incentives, direct government contracting, tax credits and prizes, Trusheim and Berndt 2012.<br><br>
+The list is practically a promise of success, and serves to emphasize the importance that has been placed uponthe realisation of stratified medicine. It appears to be a must succeed approach, and who can blame them, considering the benefits of stratification:
+Greater understanding of disease
+Improved drug delivery and specificity
+Improved levels of patient prognosis
+Higher numbers of drug approvals
+The possibility of reviewing drugs that have previously failed clinical trials
+The promise of healthy profit margins
+Government contracting?
+It`s already happening!
+A number of publically funded stratified medicine projects are running their course right now. In the UK, a partnership between several governmental bodies and charities has been formed to push forward the stratified medicine innovation platform.
+The partners include the Technology Strategy Board, the Medical Research Council, Cancer Research UK, Arthritis Research UK, Department of health, Scottish Government Health Directorate and the National institute for Clinical Health and Excellence.
+This partnership supports communication between governmental bodies, industry and academia whilst harnessing a platform that will enable identification of research and development routes suited to all parties. The partnership has £200 million to invest over a five year period, and they`ve been spending.
+For example, the  ERICA project is currently being supported by the initiative to research stratified approaches to chronic obstructive pulmonary disorders.
+<br><br>The ERICA project has six partners, including five UK universities;Nottingham, Cardiff, Royal Brompton Hospital, Cambridge and Edinburgh, and one company; GlaxoSmithKline. The project incorporates a clinical trial which looks to verify candidate biomarkers for COPD, so that the disease can be better diagnosed by bedside assessment.
+ERICA  is also actively carrying out gold standard trials on anti-inflammatory compounds.
+But it doesn’t stop there! The European Innovative Medicines Initiative is a European initiativethat has been actively supporting stratified projects for a few years now. Projects like U-BIOPRED; Unbiased biomarkers for the predication of respiratory outcomes and PRO-active; Physical activity as a crucial patient reported outcome in COPD, having been progressing now for a few years.
+These projects are huge multinational efforts to centralise and cohere interested parties to strengthen the prospect of stratified medicine for the future.
+They are currently laying down the infrastructure for international bio-banking and knowledge management protocols as well as co-ordinating preclinical, clinical and post clinical trial research efforts solely dedicated and with the express purpose to the development of stratified medical care for pulmonary patients.<br><br>
+So is stratified medicine economical? The short answer is, yes. But it`s a lot more than that. It`s preferable medicine, it`s promising medicine, it`s ground breaking medicine and most exciting of all, it`s the future of medicine.       
+
+
+</p>
+
+
+
+        </div>
+        <div class="w-col w-col-12">
+        <center><img class="shared-images grayscale" src="images/erica-words.jpg" width="445px" height="300px" alt="CCTU services"></center>
+        </div>
+      </div>
+    </div>
+
+
+<center><div class="w-col w-col-12"> <a class="login-button" clearfix href="/erica" target="_self">
+
+            <button type="button" class="btn btn-info btn-lg">Back to Home Page</button></div> </center>
+
+          </a>
+
+   <div class="section footer">
+          <div class="w-container">
+      <p class="footer-text">All rights reserved, Cambridge Clinical Trials Unit, 2014</p>
+     
+      
+    </div>
+  </div>
+
+</body>
+</html>
