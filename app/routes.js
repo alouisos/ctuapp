@@ -16,9 +16,12 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/rescue-asdh', function(req, res) { 
-		res.render('rescue-asdh')
+		res.render('rescue-asdh.ejs')
 
 	}); 
+	app.get('/CCTU-portfolio', function(req, res) { 
+		res.render('CCTU-portfolio.ejs')
+	});
 
 	// PROFILE SECTION =========================
 	app.get('/erica-loggedin', isLoggedIn, function(req, res) {
