@@ -1,0 +1,80 @@
+{
+
+   "name": "Trials",
+   "children": [
+    {
+     "name": "Proposed",
+     "children": [
+      {"name": "CCMR One", "size": 4938,   "color": "#25b7c0", "url":  "#self"},
+      {"name": "PRICKLE", "size": 4812, "color": "#25b7c0", "url":  "#self"},
+      {"name": "APLHa", "size": 3714, "color": "#25b7c0", "url":   "#self"},
+      {"name": "RESCHE-ASDH", "size": 8743, "color": "#25b7c0", "url":   "/rescue-asdh"},
+      {"name": "STEP-UP CSDH", "size": 6743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "CANCAP02", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "GLINT", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "CANCAP03", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "INPP", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "DILF", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "COMBIVAS", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "ICG13", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "REACT", "size": 3000, "color": "#35b7c0", "url": "#self"}
+
+
+     ]
+    },
+    {
+     "name": "Cancer Trials",
+     "children": [
+      {"name": "BLUES", "size": 3353, "color": "#806d6a", "url":   "#self"},
+      {"name": "START-1", "size": 5731, "color": "#806d6a", "url":   "#self"},
+      {"name": "CAM-PLEX", "size": 4840, "color": "#806d6a", "url":   "#self"},
+      {"name": "ZAP-PD", "size": 3914, "color": "#806d6a", "url":   "#self"},
+      {"name": "DILTIDY", "size": 4416, "color": "#806d6a", "url":   "#self"},
+      {"name": "iNSC_MS", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "RISCIS", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "FLUTE", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "K-Fort", "size": 3415, "color": "#806d6a", "url": "#self"}
+     ]
+    }, {
+     "name": "Surgery Trials",
+     "children": [
+     {"name": "SAMI", "size": 3743, "color": "#25b7c0", "url":   "#self"},
+     {"name": "AVEST", "size": 4743, "color": "#25b7c0", "url":   "#self"},
+      {"name": "P3BEP", "size": 4353, "color": "#85bf49", "url":   "#self"}
+     ]
+    }, 
+    {
+     "name": "Paeds",
+     "children": [
+            {"name": "HIPCO", "size": 3914, "color": "#f1bf6e", "url": "#self"}, 
+                        {"name": "GH Transition", "size": 8914, "color": "#f1bf6e", "url": "#self"} 
+
+
+     ]
+    }, 
+     {
+     "name": "Vasculitis",
+     "children": [
+      {"name": "SIMPLIFIED", "size": 3743, "color": "#7494e6", "url":   "#self"} 
+
+     ]
+    }, 
+{
+     "name": "Other Trials",
+     "children": [
+      {"name": "ICG AnCa", "size": 5353, "color": "#e5625f", "url": "#self"},
+      {"name": "CamBMT1", "size": 4731, "color": "#e5625f", "url": "#self"},
+      {"name": "Dex-CSDH", "size": 4840, "color": "#e5625f", "url": "#self"},
+      {"name": "Poly Pill", "size": 2416, "color": "#e5625f", "url": "#self"}, 
+      {"name": "Tay-Sachs Gene Therapy", "size": 16415, "color": "#e5625f", "url": "#self"}, 
+      {"name": "IL2 in acute CS", "size": 16415, "color": "#e5625f", "url": "#self"}, 
+      {"name": "Olanzipine in HD patients", "size": 16415, "color": "#e5625f", "url": "#self"}, 
+      {"name": "Determir Glargine", "size": 8415, "color": "#e5625f", "url": "#self"}
+     ]
+    }
+
+    ]}
+    
+
+ 
+ 
