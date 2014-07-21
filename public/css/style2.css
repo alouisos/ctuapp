@@ -54,6 +54,13 @@
 }
 
 
+.ch-img-7 { 
+	background-image: url(../images/ritazarem.jpg);
+		cursor:pointer;
+
+}
+
+
 .ch-info {
 	position: absolute;
 	width: 100%;

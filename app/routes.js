@@ -68,6 +68,14 @@ app.get('/cctu-other', function(req,res){
 		res.render('cctu-other.ejs')
 	});
 
+app.get('/cctu-news', function(req,res) { 
+	res.render('cctu-news.ejs')
+});
+
+app.get('/cctu-vasculitis', function(req,res) {
+		res.render('cctu-vasculitis.ejs')
+	});
+
 app.get('/erica-stratified', function(req, res) { 
 	res.render("erica-stratified.ejs"); 
 	}); 
