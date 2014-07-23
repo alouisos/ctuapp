@@ -5,10 +5,9 @@
     {
      "name": "Cardiovascular_Trials",
      "children": [
-      {"name": "ERICA TRIAL", "size": 5000,   "color": "#25b7c0", "url":  "/erica"},
+      {"name": "ERICA", "size": 5000,   "color": "#25b7c0", "url":  "/erica"},
       {"name": "EARNEST TRIAL", "size": 3400, "color": "#25b7c0", "url":  "/earnest"},
       {"name": "HYPAZ", "size": 2000, "color": "#25b7c0", "url":   "#self"},
-      {"name": "POLYPILL", "size": 6200, "color": "#25b7c0", "url":   "#self"},
       {"name": "EVOLUTION", "size": 2000, "color": "#35b7c0", "url": "#self"}
 
      ]
@@ -17,22 +16,25 @@
      "name": "Cancer Trials",
      "children": [
       {"name": "18F PET", "size": 2000, "color": "#806d6a", "url":   "#self"},
-      {"name": "LEO", "size": 2000, "color": "#806d6a", "url":   "#self"},
       {"name": "MELRESIST", "size": 3600, "color": "#806d6a", "url":   "#self"},
       {"name": "NEOSUN", "size": 2000, "color": "#806d6a", "url":   "#self"},
-      {"name": "PERSEPHONE", "size": 20000, "color": "#806d6a", "url":   "#self"},
-      {"name": "SIEGE", "size": 2000, "color": "#806d6a", "url": "#self"}
+      {"name": "SIEGE", "size": 2000, "color": "#806d6a", "url": "#self"},
+      {"name": "Avast M", "size": 4000, "color": "#806d6a", "url": "#self"}, 
+      {"name": "LEO", "size": 2000, "color": "#806d6a", "url": "#self"}
+
+
      ]
     }, {
      "name": "Surgery Trials",
      "children": [
-      {"name": "RESCUE", "size": 5200, "color": "#85bf49", "url":   "/rescue-asdh"}
+      {"name": "RESCUE ASDH", "size": 5200, "color": "#85bf49", "url":   "/rescue-asdh"}
      ]
     }, 
     {
      "name": "Paeds",
      "children": [
-            {"name": "AdDIT", "size": 4600, "color": "#f1bf6e", "url": "#self"}
+            {"name": "AdDIT", "size": 4600, "color": "#f1bf6e", "url": "#self"},
+            {"name": "Detemir Clargine", "size": 4600, "color": "#f1bf6e", "url": "#self"}
 
      ]
     }, 
@@ -46,12 +48,9 @@
 {
      "name": "Other Trials",
      "children": [
-      {"name": "IIVOP", "size": 2000, "color": "#e5625f", "url": "#self"},
-      {"name": "BUBBLE", "size": 2000, "color": "#e5625f", "url": "#self"},
-      {"name": "CIST", "size": 2000, "color": "#e5625f", "url": "#self"},
-      {"name": "DILT1D", "size": 2000, "color": "#e5625f", "url": "#self"}, 
-      {"name": "DIL FREQ", "size": 2000, "color": "#e5625f", "url": "#self"}, 
-      {"name": "VOXTOX", "size": 10000, "color": "#e5625f", "url": "#self"}
+      {"name": "Aleviate", "size": 2000, "color": "#e5625f", "url": "#self"},
+      {"name": "DILT1D", "size": 2000, "color": "#e5625f", "url": "#self"}
+      
      ]
     }
 

@@ -41,6 +41,7 @@ module.exports = function(app, passport) {
 		});
 	});
 
+
 app.get('/earnest', function(req, res) { 
 	res.render('earnest.ejs')
 	}); 
@@ -115,6 +116,8 @@ app.get('/logout-earnest', function(req, res) {
 		}));
 
 
+		///
+
 			// locally --------------------------------
 		// LOGIN ===============================
 		// show the login form
@@ -155,6 +158,17 @@ app.get('/logout-earnest', function(req, res) {
 			failureRedirect : '/signup', // redirect back to the signup page if there is an error
 			failureFlash : true // allow flash messages
 		}));
+
+
+		//Forgot Password 
+
+		app.get('/forgot', function(req, res) {
+  res.render('forgot.ejs', {
+    user: req.user
+  });
+});
+
+
 
 	// facebook -------------------------------
 

@@ -13,6 +13,9 @@ var userSchema = mongoose.Schema({
         Role         : String, 
         username     : String
     },
+        resetPasswordToken: String, 
+        resetPasswordExpires: Date, 
+
     facebook         : {
         id           : String,
         token        : String,
