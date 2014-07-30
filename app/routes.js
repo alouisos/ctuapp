@@ -96,7 +96,9 @@ app.get('/logout-earnest', function(req, res) {
 		res.redirect('/earnest');
 	});
 
-
+app.use(function (req, res) { 
+	res.render('404')
+});
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================
 // =============================================================================
@@ -312,3 +314,5 @@ function isLoggedIn(req, res, next) {
 
 	res.redirect('/');
 }
+
+
