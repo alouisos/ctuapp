@@ -49,7 +49,7 @@
      "children": [
       {"name": "Aleviate", "size": 2000, "color": "#e5625f", "url": "#self"},
       {"name": "DILT1D", "size": 2000, "color": "#e5625f", "url": "http://www.clinical-trials-type1-diabetes.com/home/"}, 
-      {"name": "IVOP", "size": 2000, "color": "#e5625f", "url": "#self"}
+      {"name": "IIVOP", "size": 2000, "color": "#e5625f", "url": "#self"}
       
      ]
     }
