@@ -48,7 +48,8 @@
      "name": "Other Trials",
      "children": [
       {"name": "Aleviate", "size": 2000, "color": "#e5625f", "url": "#self"},
-      {"name": "DILT1D", "size": 2000, "color": "#e5625f", "url": "#self"}
+      {"name": "DILT1D", "size": 2000, "color": "#e5625f", "url": "#self"}, 
+      {"name": "IVOP", "size": 2000, "color": "#e5625f", "url": "#self"}
       
      ]
     }
