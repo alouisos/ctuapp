@@ -61,6 +61,12 @@
 }
 
 
+
+.ch-img-8 { 
+	background-image: url(../images/dilt1d.jpg);
+		cursor:pointer;
+
+}
 .ch-info {
 	position: absolute;
 	width: 100%;
