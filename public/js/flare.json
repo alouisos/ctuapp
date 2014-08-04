@@ -33,7 +33,7 @@
      "name": "Paeds",
      "children": [
             {"name": "AdDIT", "size": 4600, "color": "#f1bf6e", "url": "http://www.addit-trial.org/"},
-            {"name": "Detemir Clargine", "size": 4600, "color": "#f1bf6e", "url": "#self"}
+            {"name": "DETEMIR CLARGINE", "size": 4600, "color": "#f1bf6e", "url": "#self"}
 
      ]
     }, 
@@ -47,7 +47,7 @@
 {
      "name": "Other Trials",
      "children": [
-      {"name": "Aleviate", "size": 2000, "color": "#e5625f", "url": "#self"},
+      {"name": "ALEVIATE", "size": 2000, "color": "#e5625f", "url": "#self"},
       {"name": "DILT1D", "size": 2000, "color": "#e5625f", "url": "http://www.clinical-trials-type1-diabetes.com/home/"}, 
       {"name": "IIVOP", "size": 2000, "color": "#e5625f", "url": "#self"}
       
