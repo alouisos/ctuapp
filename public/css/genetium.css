@@ -215,11 +215,11 @@ text-decoration:none;
   text-align: center;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #5c5c5c;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 3px;
-  text-transform: uppercase;
-
+/*  text-transform: uppercase;
+*/
 }
 
 
