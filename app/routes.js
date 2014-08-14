@@ -105,7 +105,7 @@ app.get('/logout-earnest', function(req, res) {
 		// LOGIN ===============================
 		// show the login form
 		app.get('/login-erica', function(req, res) {
-			res.render('login-erica.ejs', { message: req.flash('loginMessage') });
+			res.redirect('http://localhost:3000/login');
 		});
 
 		// process the login form
