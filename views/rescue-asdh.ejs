@@ -32,8 +32,8 @@
             <button type="button" class="btn btn-info btn-lg">Login</button>
 
           </a>
- <img src="images/rescue.jpg" alt="RESCUE ASDH logo" width="100" height="50">
-        
+<!--  <img src="images/rescue.jpg" alt="RESCUE ASDH logo" width="100" height="50">
+ -->        
       </div>
     </div>
 </div>
@@ -50,10 +50,18 @@
  <div class="w-container" id="page-nav-services">
       <div class="w-row organize-row">
         <div class="w-col w-col-12">
+<script> 
+function blinker() {
+    $('.blink_me').fadeOut(5000);
+    $('.blink_me').fadeIn(5000);
 
-       <center><h2 class="app-name2" id="erica-study"> RESCUE ASDH </h2></center>
-                         <center><h2 class="app-name" id="erica-study">  This is an international trial and new centres are welcome to take part in the study.<br> Please contactus at info@rescueasdh.org for further details.  </h2></center>
+}
 
+setInterval(blinker, 10000); //Runs every second
+</script>
+       
+                         <center><p class="app-name3 blink_me" id="erica-study">  This is an international trial and new centres are welcome to take part in the study.<br> Please contact us at <a href="mailto:info@rescueasdh.org"> info@rescueasdh.org</a> for further details.  </hp></center>
+<center><p class="app-name3" id="erica-study"> RESCUE ASDH </p></center>
          <center><h4 class="app-name"> Randomised Evaluation of Surgery with Craniectomy for<br>patients  Undergoing Evacuation of Acute Subdural Haematoma </h4></center>
 
          <p class="hero-subtitle"> <br>
@@ -67,7 +75,7 @@ Five-year pilot data from a NHS neurosurgical unit (Cambridge) show that 56% of 
 
 
            <div class="w-col w-col-12">
-        <center><img class="shared-images grayscale" src="images/rescue.jpg" width="400px" height="200px" alt="Rescue-ASDH Logo image"></center>
+        <center><img class="shared-images" src="images/rescue-asdh-logo.jpg" width="400px" height="200px" alt="Rescue-ASDH Logo image"></center>
         </div>
 
          
