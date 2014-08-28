@@ -217,19 +217,19 @@ text-decoration:none;
 
 @-moz-keyframes blinker {  
     0% { opacity: 0.95; }
-    50% { opacity: 0.8; }
+    50% { opacity: 0.75; }
     100% { opacity: 1.0; }
 }
 
 @-webkit-keyframes blinker {  
     0% { opacity: 0.95; }
-    50% { opacity: 0.8; }
+    50% { opacity: 0.75; }
     100% { opacity: 1.0; }
 }
 
 @keyframes blinker {  
     0% { opacity: 0.95; }
-    50% { opacity: 0.8; }
+    50% { opacity: 0.75; }
     100% { opacity: 1.0; }
 }
 
