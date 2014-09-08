@@ -19,6 +19,13 @@ module.exports = function(app, passport) {
 		res.render('rescue-asdh.ejs')
 
 	}); 
+	
+	app.get('/rescue-asdh-IE', function(req, res) { 
+		res.render('rescue-asdh-IE.ejs')
+
+	}); 
+
+
 	app.get('/CCTU-portfolio', function(req, res) { 
 		res.render('CCTU-portfolio.ejs')
 	});
